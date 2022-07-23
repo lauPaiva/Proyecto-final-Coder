@@ -1,0 +1,315 @@
+.contenedor-cuatro{
+    display: grid;
+    grid-template-areas: "header""main""footer";
+    grid-template-rows: 0.5fr 4.5fr 0.3fr;
+    .header{
+        grid-area: header;
+        .header__h1{
+            @include titulos;
+        }
+    }
+    .main{
+        grid-area: main;
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 100%;
+        }
+        .cont-1, .cont-2, .cont-3{
+            @include flex-center-col;
+            margin-bottom: 9rem;
+            .div-img{
+                @extend %div-img-sobmi;
+            }
+            .parrafo{
+                @include flex-center;
+                p{
+                    @extend %p-sobmi;
+                }
+            }
+        }
+        
+    }
+    .footer{
+        grid-area: footer;
+    }
+}
+@media screen and (min-width:601px){
+    .contenedor-cuatro{
+        .header{
+            .header__h1{
+                font-size: 9rem;
+            }
+        }
+        .main{
+            .cont-1, .cont-2, .cont-3{
+                .div-img{
+                    @extend %div-img-sobmi2;
+                }
+                .parrafo{
+                    p{
+                        @extend %p-sobmi2;
+                    }
+                }  
+            }
+        } 
+    }
+}
+@media screen and (min-width:1024px){
+    .contenedor-cuatro{
+        .header{
+            .header__h1{
+                font-size: 12rem;
+            }
+        }
+        .main{
+            .cont-1, .cont-2, .cont-3{
+                .parrafo{
+                    p{
+                        transition: 0.8s;
+                        opacity: 0;
+                        box-shadow: none;
+                        $border-color: #fff;
+                        $border-width: 3px;
+                        @function restov()
+                            {
+                            @return -(142.5px - $border-width);
+                        }
+                        @function restoh(){
+                            @return (560px - $border-width);
+                        }
+                        font-size: 2.5rem;
+                        box-sizing: border-box;
+                        width: 560px;
+                        height: 142.5px;
+                        padding: 1.5rem 1rem;                        
+                        position: relative;
+                        &::before,&::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            background-color: $border-color;
+                            transition: 0.8s;
+                        }
+                        &::before{
+                            height: $border-width;
+                            width: 0;
+                            bottom: 0;
+                            box-shadow: 560px restov() $border-color;
+                            
+                        }
+                        &::after{
+                            top: 0;
+                            width: $border-width;
+                            height: 0;
+                            box-shadow: restoh() 142.5px $border-color;
+                        
+                        }
+                        
+                    }
+                }   
+            &:hover{
+                $border-color: #fff;
+                $border-width: 3px;
+                @function restov(){
+                    @return -(142.5px - $border-width);
+                    }
+                @function restoh(){
+                        @return (560px - $border-width);
+                        }
+                .parrafo{
+                    p{
+                        opacity: 1;
+                        transition: 0.8s;
+                        &::before{
+                            width: 100%;
+                            box-shadow: 0 restov() $border-color;
+                        }
+                        &::after{
+                            height: 100%;
+                            box-shadow: restoh() 0 $border-color;
+                        }
+                    }
+                }
+            }
+            }
+
+        }
+    }
+}
+@media screen and (min-width:1366px){
+    .contenedor-cuatro{
+        grid-template-rows: 0.5fr 2fr 0.1fr;
+        .main{
+            display: grid;
+            grid-template-areas: "cont1 cont2 cont3";
+            grid-template-columns: 1fr 1fr 1fr;   
+            .cont-1{
+                grid-area: cont1;
+            }
+            .cont-2{
+                grid-area: cont2;
+                
+            }
+            .cont-3{
+                grid-area: cont3;
+            }
+            .cont-1, .cont-2, .cont-3{
+                .div-img{
+                    transition: 0.5s;
+                }
+                &:hover{
+                    .div-img{
+                        transform: scale(1.05);
+                        transition: 0.6s;
+                    }  
+                }
+                .parrafo{
+                    p{
+                        transition: 1s;
+                        box-shadow: none;
+                        $border-color: #fff;
+                        $border-width: 3px;
+                        @function restov()
+                            {
+                            @return -(180px - $border-width);
+                        }
+                        @function restoh(){
+                            @return (430px - $border-width);
+                        }
+                        font-size: 2.5rem;
+                        box-sizing: border-box;
+                        width: 430px;
+                        height: 180px;
+                        padding: 1.5rem 1rem;                        
+                        position: relative;
+                        &::before,&::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            background-color: $border-color;
+                            transition: 0.8s;
+                        }
+                        &::before{
+                            height: $border-width;
+                            width: 0;
+                            bottom: 0;
+                            box-shadow: 430px restov() $border-color;
+                            
+                        }
+                        &::after{
+                            top: 0;
+                            width: $border-width;
+                            height: 0;
+                            box-shadow: restoh() 142.5px $border-color;
+                        
+                        }
+                        
+                    }
+                }   
+            &:hover{
+                $border-color: #fff;
+                $border-width: 3px;
+                @function restov(){
+                    @return -(180px - $border-width);
+                    }
+                @function restoh(){
+                        @return (430px - $border-width);
+                        }
+                .parrafo{
+                    p{
+                        transition: 1s;
+                        &::before{
+                            width: 100%;
+                            box-shadow: 0 restov() $border-color;
+                            transition: 0.8s;
+                        }
+                        &::after{
+                            height: 100%;
+                            box-shadow: restoh() 0 $border-color;
+                            transition: 0.8s;
+                        }
+                    }
+                }
+            }
+                
+            }
+        }
+    }
+}
+@media screen and (min-width:1920px){
+    .contenedor-cuatro{
+        .main{
+            .cont-1, .cont-2, .cont-3{
+                .parrafo{
+                    p{
+                        box-shadow: none;
+                        $border-color: #fff;
+                        $border-width: 3px;
+                        @function restov()
+                            {
+                            @return -(142.5px - $border-width);
+                        }
+                        @function restoh(){
+                            @return (500px - $border-width);
+                        }
+                        font-size: 2.5rem;
+                        box-sizing: border-box;
+                        width: 500px;
+                        height: 142.5px;
+                        padding: 1.5rem 1rem;                        
+                        position: relative;
+                        &::before,&::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            background-color: $border-color;
+                            transition: all .5s;
+                        }
+                        &::before{
+                            height: $border-width;
+                            width: 0;
+                            bottom: 0;
+                            box-shadow: 500px restov() $border-color;
+                            
+                        }
+                        &::after{
+                            top: 0;
+                            width: $border-width;
+                            height: 0;
+                            box-shadow: restoh() 142.5px $border-color;
+                        
+                        }
+                        
+                    }
+                }   
+            &:hover{
+                $border-color: #fff;
+                $border-width: 3px;
+                @function restov(){
+                    @return -(142.5px - $border-width);
+                    }
+                @function restoh(){
+                        @return (500px - $border-width);
+                        }
+                .parrafo{
+                    p{
+                        &::before{
+                            width: 100%;
+                            box-shadow: 0 restov() $border-color;
+                        }
+                        &::after{
+                            height: 100%;
+                            box-shadow: restoh() 0 $border-color;
+                        }
+                    }
+                }
+            }
+            }
+        }
+    }
+}

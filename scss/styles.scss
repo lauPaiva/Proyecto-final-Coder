@@ -1,0 +1,198 @@
+
+//Variables, extend y mixin
+
+@import "utilities/variables";
+
+@import "utilities/mixin";
+
+@import "utilities/extend";
+
+
+/*Estilos compartidos*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+body{
+    position: relative;
+    font-size: 1.5rem;
+    background-image: url(../img/fondo3.png);
+    background-color: $bg-color;
+    min-height: 100vh;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+//menu (mobile)
+
+.menu{
+    background-color: $bg-color;
+    .menu__div-fluid{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0.5rem 0rem;
+        .a-none{
+            color: $color-titles;
+            margin:0rem 0rem 0rem 2rem;
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+        .a-none:active{
+            transform: translate(3px, 3px);
+        }
+        .menu__icono{
+            margin-right: 2rem;
+            padding: 0.3rem;
+            background-color: transparent;
+            border: none;
+        }
+        .menu__ul{
+            .menu__li{
+                margin: 0.2rem 0rem;
+                padding: 0.5rem 2rem;
+                font-size: 1.8rem;
+                .menu__a{
+                    color: $color-titles;
+                    text-decoration: none;
+                } 
+            }
+            .menu__li:active{
+                transform: translate(3px, 3px);
+            }
+            .menu__li:nth-child(1){
+                display: none;
+            }
+        }
+        
+    }
+}
+.footer{
+    grid-area: footer;
+    text-align: center;
+    background-color: $bg-color;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5rem;
+    .footer__img{
+        a{
+            img{
+            padding: 0.3rem 0.3rem;
+            margin: 0rem 0.5rem;
+            }
+        }
+    } 
+    .footer__h2{
+        color: $color-general;
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+//menu (tablet)
+@media screen and (min-width:600px){
+
+    .menu{
+        .menu__div-fluid{
+            .a-none{
+                font-size: 2.1rem;
+            }
+            .menu__icono img{
+                width: 3rem;
+            }
+            .menu__ul{
+                .menu__li{
+                    font-size: 2.1rem;
+                }
+            } 
+        }
+    }
+    .footer {
+        .footer__h2{
+            font-size: 1.8rem;
+        }
+    }
+}
+
+//colapso del nav
+@media screen and (min-width:992px){
+    
+    .menu{
+        .menu__div-fluid{
+            .menu__icono{
+                display: none;
+            }
+            .a-none{
+                display: none;
+            }
+            .menu__ul{
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                .menu__li{
+                    .menu__a{
+                        font-size: 2.5rem;
+                        padding: 1rem 2rem;
+                    }
+                    .menu__a:hover{  
+                        background: rgb(140,91,101);
+                        background: linear-gradient(45deg, rgba(140,91,101,1) 0%, rgba(219,145,160,1) 100%); 
+                        border-radius: 1rem;
+                        box-shadow: 0px 0px 10px -5px black;
+                    }
+                    .selected{
+                        background-color: $hover-color;
+                        border-radius: 1rem;
+                        box-shadow: 0px 0px 10px -5px black;
+                        
+                    }
+                }
+                .menu__li:nth-child(1){
+                    display:block;
+                }
+
+            }
+            
+        }  
+    }  
+    .footer{
+        .footer__img{
+            a:nth-child(1){
+                img:hover{
+                    background-color: #166FE5;
+                    border-radius: 100%;
+                }
+            }
+            a:nth-child(2){
+                img:hover{
+                    background: #d6249f;
+                    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+                    border-radius: 100%;
+                }
+            }
+            a:nth-child(3){
+                img:hover{
+                    background-color: #119AFB;
+                    border-radius: 100%;
+                }
+            }
+            
+        }
+    }
+}
+
+@import "../utilities/home";
+@import "../utilities/cb";
+@import "../utilities/bach";
+@import "../utilities/sobmi";
+@import "../utilities/contacto";
+
+
+@import "../bordeanimado"
