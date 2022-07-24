@@ -1,3 +1,5 @@
+/* Estilos de ciclo básico (mobile) */
+
 .contenedor-dos{
     display: grid;
     grid-template-areas: "header""main""footer";
@@ -59,7 +61,6 @@
                         color: $color-general;
                         text-align: center;
                         font-size: 2rem
-
                     }
                     h2{
                         @extend %subtitulos;
@@ -75,6 +76,7 @@
         grid-area: footer;
     }
 }
+/* ciclo básico tablet */
 @media screen and (min-width:600px){
     .contenedor-dos{
         grid-template-rows: 0.5fr 3fr 0.3fr;
@@ -117,7 +119,6 @@
                     .cont-6{
                         grid-area: cont6;
                     }
-    
                     div{
                         max-width: 35rem;
                         h2{
@@ -130,11 +131,11 @@
                         }
                     }
                 }
-                
             }
         }
     }
 }
+/* ciclo básico desktop */
 @media screen and (min-width:1024px){
     .contenedor-dos{
         .header{
@@ -201,6 +202,7 @@
         }
     }
 }
+/* ciclo básico - media para ajustar detalles para pantallas grandes */
 @media screen and (min-width:1367px){
     .contenedor-dos{
         .main {

@@ -1,3 +1,5 @@
+/* Estilos contacto moblie */
+
 .contenedor-cinco{
     display: grid;
     grid-template-areas: "header""main""footer";
@@ -83,6 +85,7 @@
         grid-area: footer;
     }
 }
+/* contacto tablet */
 @media screen and (min-width:601px){
     .contenedor-cinco{
         .header{
@@ -98,6 +101,7 @@
         }
     }
 }
+/* contacto desktop */
 @media screen and (min-width:1024px){
     .contenedor-cinco{
         .header{

@@ -1,3 +1,5 @@
+/* Estilos sobre mí moblie */
+
 .contenedor-cuatro{
     display: grid;
     grid-template-areas: "header""main""footer";
@@ -35,6 +37,7 @@
         grid-area: footer;
     }
 }
+/* sobre mí tablet */
 @media screen and (min-width:601px){
     .contenedor-cuatro{
         .header{
@@ -56,6 +59,7 @@
         } 
     }
 }
+/* sobre mí desktop */
 @media screen and (min-width:1024px){
     .contenedor-cuatro{
         .header{
@@ -139,6 +143,7 @@
         }
     }
 }
+/* sobre mí - ajuste de detalles de (hover) */
 @media screen and (min-width:1366px){
     .contenedor-cuatro{
         grid-template-rows: 0.5fr 2fr 0.1fr;
@@ -240,6 +245,7 @@
         }
     }
 }
+/* sobre mí - ajuste de detalles de (hover) */
 @media screen and (min-width:1920px){
     .contenedor-cuatro{
         .main{

@@ -27,7 +27,7 @@ body{
     font-family: 'Barlow Condensed', sans-serif;
 }
 
-//menu (mobile)
+/* menu mobile */
 
 .menu{
     background-color: $bg-color;
@@ -68,8 +68,7 @@ body{
             .menu__li:nth-child(1){
                 display: none;
             }
-        }
-        
+        } 
     }
 }
 .footer{
@@ -96,9 +95,9 @@ body{
     }
 }
 
-//menu (tablet)
-@media screen and (min-width:600px){
+/* menú tablet */
 
+@media screen and (min-width:600px){
     .menu{
         .menu__div-fluid{
             .a-none{
@@ -121,9 +120,9 @@ body{
     }
 }
 
-//colapso del nav
+/* menú colapso del nav de BS (desktop) */
+
 @media screen and (min-width:992px){
-    
     .menu{
         .menu__div-fluid{
             .menu__icono{
@@ -157,9 +156,7 @@ body{
                 .menu__li:nth-child(1){
                     display:block;
                 }
-
-            }
-            
+            }    
         }  
     }  
     .footer{
@@ -182,8 +179,7 @@ body{
                     background-color: #119AFB;
                     border-radius: 100%;
                 }
-            }
-            
+            }  
         }
     }
 }
@@ -193,6 +189,3 @@ body{
 @import "../utilities/bach";
 @import "../utilities/sobmi";
 @import "../utilities/contacto";
-
-
-@import "../bordeanimado"
